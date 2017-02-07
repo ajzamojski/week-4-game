@@ -1,0 +1,91 @@
+body {
+	background-image: url("../images/wov.png");
+	
+}
+
+.heading {
+	width: 300px;
+	height: 50px;
+	text-align: center;
+	padding: 10px 0px 30px;
+	background-color: orange;
+}
+
+.mainsection {
+	width: 380px;
+	background-color: beige;
+	color: green;
+	padding: 10px 0px 30px;
+	margin: 10px 0px;
+}
+
+.computernumber {
+	float: left;
+	width: 245px;
+	height: 120px;
+	background-color: green;
+	margin: 10px 0px;
+}
+
+.scoreboard {
+	float: left;
+	width: 100px;
+	height: 120px;
+	margin: 10px 0px 10px 10px;
+	background-color: lightblue;
+}
+
+.crystalpictures {
+	clear: both;
+}
+
+.crystal-image {
+	float: left;
+	width: 80px;
+	height: 100px;
+	margin: 10px;
+
+}
+
+#crystal2 {
+	float: left;
+	width: 80px;
+	height: 100px;
+	margin: 10px;
+
+}
+
+#crystal3 {
+	float: left;
+	width: 80px;
+	height: 100px;
+	margin: 10px;
+
+}
+
+#crystal4 {
+	float: left;
+	width: 80px;
+	height: 100px;
+	margin: 10px;
+}
+
+.scoreheading {
+	clear: both;
+	width: 250px;
+	height: 20px;
+	background-color: darkgreen;
+	margin: 10px;
+}
+
+.yourscore {
+	clear: both;
+	width: 250px;
+	height: 120px;
+	background-color: darkgreen;
+	margin: 10px;
+}
+
+.computernumber, .yourscore {
+	font-size: 24px;
+}
