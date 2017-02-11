@@ -20,7 +20,7 @@ $(document).ready(function() {
 		randomnumber.length = 0;
 		numbersselected.length = 0;
 		$(".crystalpictures").empty();
-		$(".message").html("");
+		// $(".message").html("");
 		$(".wins").html("Wins: " + wins);
 		$(".losses").html("Losses " + losses);
 
@@ -28,8 +28,8 @@ $(document).ready(function() {
 		//along with the number counter when you click on the crystals
 
 		computernumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-		$(".computernumber").html(computernumber);
-		$(".yourscore").html(yournumber);
+		$(".computernumber").html("<h4>Exact Rupees to get: </h4>" + computernumber);
+		$(".yourscore").html("Your total score is: " + yournumber);
 
 			//This function sets a random number between 1-12 to an array, if the number
 			// picked already exists in another array, it will repick a number
@@ -42,7 +42,6 @@ $(document).ready(function() {
 				}
 			}
 		}
-
 		//Because there will be 4 options, the for loop will cycle through 4 times
 		// and setting an array to check if number was picked already
 		for (var i = 0; i < 4; i++) {
@@ -55,17 +54,14 @@ $(document).ready(function() {
 
 }
 
-
 reset();
-
 console.log(randomnumber);
-
 
 	//Function for setting images and playing the game
 	function playgame() {
 
 	//Image sources get stored in an array
-	var imagessources = ["assets/images/crystal1.png", "assets/images/crystal2.jpg", "assets/images/crystal3.png", "assets/images/crystal4.jpg"];
+	var imagessources = ["assets/images/rupee1.png", "assets/images/rupee2.png", "assets/images/rupee3.png", "assets/images/rupee4.png"];
 	
 	//For loop creates images and uses the array with the images to place them in the html file,
 
@@ -85,6 +81,7 @@ console.log(randomnumber);
 	//When the image is clicked on, the data value get stored in a var and converted
 	//from a string to in integer
 	$(".crystal-image").on("click", function(){
+	$(".message").html("");
 
 	var crystalValue = ($(this).attr("data-crystalvalue"));
 	crystalValue = parseInt(crystalValue);
@@ -92,7 +89,7 @@ console.log(randomnumber);
 	//The picture with the number attached gets added to the total value of your clicks
 	// and displayed
 	yournumber += crystalValue;
-	$(".yourscore").html(yournumber);
+	$(".yourscore").html("Your total score is: " + yournumber);
 
 	//These condition determine if you won or lost the game, if the condition is met
 	// the game calls the reset function, initializing all variables again
@@ -101,7 +98,6 @@ console.log(randomnumber);
 		wins++;
 		$(".message").html("You Won!");
 		reset();
-
 		}
 
 	if (yournumber > computernumber) {
