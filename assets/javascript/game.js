@@ -17,10 +17,7 @@ $(document).ready(function() {
 	function reset() {
 		computernumber = 0;
 		yournumber = 0;
-		randomnumber.length = 0;
-		numbersselected.length = 0;
 		$(".crystalpictures").empty();
-		// $(".message").html("");
 		$(".wins").html("Wins: " + wins);
 		$(".losses").html("Losses " + losses);
 
@@ -34,11 +31,12 @@ $(document).ready(function() {
 			//This function sets a random number between 1-12 to an array, if the number
 			// picked already exists in another array, it will repick a number
 
-			function tryagain (){
-			randomnumber[i] = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+		function tryagain(){
+			randomnumber[i] = Math.round(Math.random() * (12 - 1 + 1));
+			// checks for duplicates
 			for (var k = 0; k < numbersselected.length; k++) {
-			if (randomnumber[i] === numbersselected[k]) {
-			tryagain();
+				if (randomnumber[i] === numbersselected[k]) {
+					tryagain();
 				}
 			}
 		}
@@ -47,7 +45,7 @@ $(document).ready(function() {
 		for (var i = 0; i < 4; i++) {
 			tryagain();
 			numbersselected.push(randomnumber[i]);
-	}
+		}
 	//Function playgame gets called
 
 	playgame() 
@@ -67,14 +65,18 @@ console.log(randomnumber);
 
 	for (var i = 0; i < randomnumber.length; i++) {
 		var imageCrystal = $("<img>");
+		var imageCrystalbutton = $("<button>");
+
 		imageCrystal.addClass("crystal-image");
 		imageCrystal.attr("src", imagessources[i]);
+		imageCrystalbutton.addClass("buttonimg");
 
 		//Assigns value that was randomly chosen to the current picture in loop
 		imageCrystal.attr("data-crystalvalue", randomnumber[i]);
 
 		//Displays the picture to the html along with its attributes
-		$(".crystalpictures").append(imageCrystal);
+		$(".crystalpictures").append(imageCrystalbutton);
+		imageCrystalbutton.append(imageCrystal);
 
 		}	
 

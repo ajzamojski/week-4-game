@@ -1,5 +1,5 @@
 body {
-	background-image: url("../images/backgroundimg.jpg");
+	background-image: url("../images/wov.png");
 /*	background-size: 100%;
 	background-size: cover;*/
 }
@@ -22,8 +22,18 @@ body {
 	background: rgba(217, 247, 247, .5);
 }
 
-.crystalbutton {
+.crystal-image {
 	cursor: pointer;
+}
+
+.buttonimg {
+	padding: 0px;
+	border: 0px;
+	margin: 10px;
+}
+
+p {
+	font-size: 18px;
 }
 
 .heading {
@@ -66,10 +76,7 @@ background: rgba(217, 247, 247, .7);
 
 .crystal-image {
 	float: left;
-	width: 68px;
 	height: 100px;
-	margin: 10px;
-
 }
 
 #crystal2 {
@@ -109,4 +116,11 @@ background: rgba(217, 247, 247, .7);
 
 .computernumber, .yourscore {
 	font-size: 24px;
+}
+
+@media screen and (min-width: 480px) {
+
+	body{
+	background-image: url("../images/backgroundimg.jpg");
+	}
 }
